@@ -6,10 +6,10 @@
 </head>
 <body>
 <ul>
-    {% for breed, data in breeds.items() %}
+    {% for kitty in kitties %}
         <li>
-            {{ breed }} <br/>
-            <img src="{{data.imageUrl}}"/>
+            {{ kitty.name }} - {{ kitty.coat }} <br/>
+            <img src="{{kitty.image_url}}"/>
         </li>
     {% endfor %}
 </ul>

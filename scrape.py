@@ -3,6 +3,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
+from app.model import db, Kitty, User
 
 cat_html = requests.get("https://en.wikipedia.org/wiki/List_of_cat_breeds").text
 
@@ -27,17 +28,16 @@ for row in rows:
     if images:
         image_url = images[0].attrs["src"]
 
-    kitty = {
-        "name": breed_name,
-        "country": country,
-        "origin": origin,
-        "body": body,
-        "coat": coat,
-        "pattern": pattern,
-        "imageUrl": image_url,
-    }
-    breeds[breed_name] = kitty
-
-print(json.dumps(breeds, indent=4))
+    db.session.add(Kitty(
+        name=breed_name,
+        country=country,
+        origin=origin,
+        body=body,
+        coat=coat,
+        pattern=pattern,
+        image_url=image_url,
+    ))
+db.session.add(User(username="Ben", email="ben.johnson@umbc.edu"))
+db.session.commit()
 
 # print(breeds)
