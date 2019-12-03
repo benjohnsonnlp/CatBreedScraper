@@ -24,4 +24,3 @@ class Kitty(db.Model):
 
 if __name__ == '__main__':
     # db.create_all()
-    admin = Admin(app)
