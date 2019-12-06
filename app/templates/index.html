@@ -8,7 +8,7 @@
 <ul>
     {% for kitty in kitties %}
         <li>
-            {{ kitty.name }} - {{ kitty.coat }} <br/>
+            {{ kitty.name }} - {{ kitty.coat }} - {{kitty.country}} <br/>
             <img src="{{kitty.image_url}}"/>
         </li>
     {% endfor %}

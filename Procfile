@@ -1,0 +1,1 @@
+web: export FLASK_APP=catbreeds.py; flask run
