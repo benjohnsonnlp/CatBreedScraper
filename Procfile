@@ -1,1 +1,1 @@
-web: export FLASK_APP=catbreeds.py; flask run
+web: python3 catbreeds.py
