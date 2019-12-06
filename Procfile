@@ -1,2 +1,2 @@
 release: python3 app/model.py
-web: python3 catbreeds.py
+web: export FLASK_APP=catbreeds.py; flask run
